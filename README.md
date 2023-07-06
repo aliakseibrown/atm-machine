@@ -10,4 +10,4 @@ A console program that accepts an unspecified number of change to spend on the o
 2 gr: 100 szt.<br>
 1 gr: 10000 szt.<br>
 #
-<img width="756" alt="Screenshot 2023-07-06 at 3 58 30 PM" src="https://github.com/aliakseibrown/atm-machine/assets/67626128/ca4848cd-ee8a-48af-8cea-99907a82754c">
+<img width="1203" alt="Screenshot atm-machine" src="https://github.com/aliakseibrown/atm-machine/assets/67626128/4380988c-9998-4337-803a-c9bdb13dd3a1">
