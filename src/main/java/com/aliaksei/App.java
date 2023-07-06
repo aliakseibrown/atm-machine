@@ -19,6 +19,7 @@ public final class App {
         PolishCurrency groszy = new PolishCurrency(10, 20, 200, 100, 100, 10000, "gr");
         polishCurrency.add(zloty);
         polishCurrency.add(groszy);
+
         System.out.println("Print 'q' to exit");
         while (input != "q") {
             input = controller.getInput();

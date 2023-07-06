@@ -26,30 +26,41 @@ public class ATMController {
     }
 
     public List<Integer> stringIntoIntegers(String val) {
+        double d = Double.parseDouble(val);
+        String doubleAsString = String.valueOf(d);
         List<Integer> list = new ArrayList<>();
         String[] arr = new String[2];
-        int a, b;
-        if (val.contains(".")) {
-            arr = val.split("\\.");
-            try {
-                a = Integer.parseInt(arr[0]);
-                b = Integer.parseInt(arr[1]);
-            } catch (NumberFormatException e) {
-                return null;
-            }
-        } else {
-            a = Integer.parseInt(arr[0]);
-            b = 0;
-        }
-        int i = arr[1].length();
-        // int b = Integer.parseInt(arr[1]);
-        while (i > 0) {
-            b *= 10;
-            i--;
-        }
+        arr = doubleAsString.split("\\.");
+        int a = Integer.parseInt(arr[0]);
+        int b = Integer.parseInt(arr[1]);
         list.add(a);
         list.add(b);
         return list;
+
+        // List<Integer> list = new ArrayList<>();
+        // String[] arr = new String[2];
+        // int a, b;
+        // if (val.contains(".")) {
+        // arr = val.split("\\.");
+        // try {
+        // a = Integer.parseInt(arr[0]);
+        // b = Integer.parseInt(arr[1]);
+        // } catch (NumberFormatException e) {
+        // return null;
+        // }
+        // } else {
+        // a = Integer.parseInt(arr[0]);
+        // b = 0;
+        // }
+        // int i = arr[1].length();
+        // // int b = Integer.parseInt(arr[1]);
+        // while (i > 0) {
+        // b *= 10;
+        // i--;
+        // }
+        // list.add(a);
+        // list.add(b);
+        // return list;
     }
 
     public double unit(double zloty, double groszy) {

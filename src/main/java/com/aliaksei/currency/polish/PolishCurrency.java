@@ -1,7 +1,5 @@
 package com.aliaksei.currency.polish;
 
-import java.util.Objects;
-
 import com.aliaksei.currency.ICurrency;
 
 public class PolishCurrency implements ICurrency {
