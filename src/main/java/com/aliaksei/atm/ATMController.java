@@ -36,8 +36,13 @@ public class ATMController {
         List<Integer> list = new ArrayList<>();
         String[] arr = new String[2];
         arr = doubleAsString.split("\\.");
+        int i = arr[1].length();
         int a = Integer.parseInt(arr[0]);
         int b = Integer.parseInt(arr[1]);
+        while (i > 0) {
+            b *= 10;
+            i--;
+        }
         list.add(a);
         list.add(b);
         return list;
