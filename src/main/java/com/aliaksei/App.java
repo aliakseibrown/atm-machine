@@ -23,7 +23,7 @@ public final class App {
         System.out.println("Print 'q' to exit");
         while (true) {
             input = controller.getInput();
-            if (input == "q")
+            if (input.equals("q"))
                 break;
             controller.withdrawPolishCurrency(polishCurrency, input);
         }
