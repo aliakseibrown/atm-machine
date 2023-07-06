@@ -21,8 +21,10 @@ public final class App {
         polishCurrency.add(groszy);
 
         System.out.println("Print 'q' to exit");
-        while (input != "q") {
+        while (true) {
             input = controller.getInput();
+            if (input == "q")
+                break;
             controller.withdrawPolishCurrency(polishCurrency, input);
         }
     }

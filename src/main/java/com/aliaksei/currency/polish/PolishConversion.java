@@ -3,7 +3,6 @@ package com.aliaksei.currency.polish;
 import com.aliaksei.currency.ICurrency;
 
 public class PolishConversion extends PolishCurrency {
-    double unit;
 
     public int withdraw(ICurrency currency, int takeOut) {
         int available;

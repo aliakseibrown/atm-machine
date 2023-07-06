@@ -15,7 +15,7 @@ public class ATMController {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String input;
 
-        System.out.println("Wprowadź kwotę do wypłaty: ");
+        System.out.println("\nWprowadź kwotę do wypłaty: ");
         try {
             input = br.readLine();
             return input;
@@ -26,7 +26,12 @@ public class ATMController {
     }
 
     public List<Integer> stringIntoIntegers(String val) {
-        double d = Double.parseDouble(val);
+        double d = 0.0;
+        try {
+            d = Double.parseDouble(val);
+        } catch (NumberFormatException e) {
+            System.out.println("Poproszę wpisać tylko liczby");
+        }
         String doubleAsString = String.valueOf(d);
         List<Integer> list = new ArrayList<>();
         String[] arr = new String[2];
@@ -36,31 +41,6 @@ public class ATMController {
         list.add(a);
         list.add(b);
         return list;
-
-        // List<Integer> list = new ArrayList<>();
-        // String[] arr = new String[2];
-        // int a, b;
-        // if (val.contains(".")) {
-        // arr = val.split("\\.");
-        // try {
-        // a = Integer.parseInt(arr[0]);
-        // b = Integer.parseInt(arr[1]);
-        // } catch (NumberFormatException e) {
-        // return null;
-        // }
-        // } else {
-        // a = Integer.parseInt(arr[0]);
-        // b = 0;
-        // }
-        // int i = arr[1].length();
-        // // int b = Integer.parseInt(arr[1]);
-        // while (i > 0) {
-        // b *= 10;
-        // i--;
-        // }
-        // list.add(a);
-        // list.add(b);
-        // return list;
     }
 
     public double unit(double zloty, double groszy) {
@@ -79,8 +59,10 @@ public class ATMController {
             double unitCapacity = unit(mainly.getAmount(), secondary.getAmount());
 
             if (unitCapacity >= unitTakeOut) {
-                System.out.println("Capacity: " + unitCapacity);
-                System.out.println("Dla reszty: " + unitTakeOut);
+                if (unitTakeOut != 0.0) {
+                    System.out.println("Dostępne środki: " + unitCapacity);
+                    System.out.println("Dla reszty: " + unitTakeOut);
+                }
                 int remain = conversion.withdraw(mainly, devided.get(0));
                 remain = remain * 100 + devided.get(1);
                 conversion.withdraw(secondary, remain);
